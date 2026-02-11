@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Study Helper</title>
+</head>
+
+<body>
+
+  <h1>Welcome to AI Study Helper</h1>
+
+  <p>Type your doubt below:</p>
+
+  <textarea id="question" rows="5" cols="50"></textarea>
+
+  <br><br>
+
+  <button onclick="askAI()">Ask</button>
+
+  <p id="answer"></p>
+
+  <script>
+    function askAI() {
+      document.getElementById("answer").innerText =
+        "AI will reply here later...";
+    }
+  </script>
+
+</body>
+</html>
