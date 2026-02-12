@@ -10,13 +10,22 @@
 
   <p>Type your question:</p>
 
-  <textarea rows="5" cols="50"></textarea>
+  <textarea id="question" rows="5" cols="50"></textarea>
 
   <br><br>
 
-  <button>Ask</button>
+  <button onclick="askAI()">Ask</button>
 
-  <p>Answer will appear here.</p>
+  <p id="answer">Answer will appear here.</p>
+
+  <script>
+    function askAI() {
+      let q = document.getElementById("question").value;
+
+      document.getElementById("answer").innerText =
+        "You asked: " + q;
+    }
+  </script>
 
 </body>
 </html>
