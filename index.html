@@ -19,11 +19,31 @@
   <p id="answer">Answer will appear here.</p>
 
   <script>
-    function askAI() {
+    async function askAI() {
+
+      // Get user question
       let q = document.getElementById("question").value;
 
+      // Show loading
+      document.getElementById("answer").innerText = "Thinking...";
+
+      // Send question to backend
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: q
+        })
+      });
+
+      // Get reply
+      const data = await response.json();
+
+      // Show answer
       document.getElementById("answer").innerText =
-        "You asked: " + q;
+        data.reply || "Error: No response";
     }
   </script>
 
